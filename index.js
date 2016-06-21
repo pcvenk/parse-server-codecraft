@@ -33,11 +33,11 @@ var api = new ParseServer({
     module: 'parse-server-simple-mailgun-adapter',
     options: {
       // The address that your emails come from
-      fromAddress: process.env.MAILGUN_FROM,
+      fromAddress: process.env.EMAIL_FROM,
       // Your domain from mailgun.com
       domain: process.env.MAILGUN_DOMAIN,
       // Your API key from mailgun.com
-      apiKey: process.env.MAILGUN_KEY
+      apiKey: process.env.MAILGUN_API_KEY
     }
   }
 });
