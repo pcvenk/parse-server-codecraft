@@ -21,7 +21,7 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
   // Enable email verification
-  verifyUserEmails: false,
+  verifyUserEmails: true,
   // The public URL of your app.
   // This will appear in the link that is used to verify email addresses and reset passwords.
   // Set the mount path as it is in serverURL
