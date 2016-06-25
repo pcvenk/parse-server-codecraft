@@ -1,6 +1,6 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
-var S3Adapter = require('parse-server').S3Adapter;
+//var S3Adapter = require('parse-server').S3Adapter;
 var path = require('path');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
@@ -15,34 +15,34 @@ var api = new ParseServer({
 	appId: process.env.APP_ID || 'myAppId',
 	masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!
 	serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
-	liveQuery: {
-		classNames: ["TestObject", "Place", "Team", "Player"] // List of classes to support for query subscriptions
-	},
+	//liveQuery: {
+	//	classNames: ["TestObject", "Place", "Team", "Player"] // List of classes to support for query subscriptions
+	//},
 	// Enable email verification
-	verifyUserEmails: true,
+	//verifyUserEmails: true,
 	// The public URL of your app.
 	// This will appear in the link that is used to verify email addresses and reset passwords.
 	// Set the mount path as it is in serverURL
-	publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
+	//publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
 	// Your apps name. This will appear in the subject and body of the emails that are sent.
-	appName: process.env.APP_NAME || "CodeCraft",
+	//appName: process.env.APP_NAME || "CodeCraft",
 	// The email adapter
-	emailAdapter: {
-		module: 'parse-server-simple-mailgun-adapter',
-		options: {
-			// The address that your emails come from
-			fromAddress: process.env.EMAIL_FROM || "test@example.com",
-			// Your domain from mailgun.com
-			domain: process.env.MAILGUN_DOMAIN || "example.com",
-			// Your API key from mailgun.com
-			apiKey: process.env.MAILGUN_API_KEY  || "apikey"
-		}
-	},
-	filesAdapter: new S3Adapter(
-		{
-			directAccess: true
-		}
-	)
+	//emailAdapter: {
+	//	module: 'parse-server-simple-mailgun-adapter',
+	//	options: {
+	//		// The address that your emails come from
+	//		fromAddress: process.env.EMAIL_FROM || "test@example.com",
+	//		// Your domain from mailgun.com
+	//		domain: process.env.MAILGUN_DOMAIN || "example.com",
+	//		// Your API key from mailgun.com
+	//		apiKey: process.env.MAILGUN_API_KEY  || "apikey"
+	//	}
+	//},
+	//filesAdapter: new S3Adapter(
+	//	{
+	//		directAccess: true
+	//	}
+	//)
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
@@ -79,5 +79,3 @@ httpServer.listen(port, function () {
 
 // This will enable the Live Query real-time server
 ParseServer.createLiveQueryServer(httpServer);
-
-
