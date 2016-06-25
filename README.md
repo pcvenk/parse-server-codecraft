@@ -4,6 +4,8 @@ Example project using the [parse-server](https://github.com/ParsePlatform/parse-
 
 Read the full Parse Server guide here: https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide
 
+*THIS IS FORKED FROM THE OFFICIAL EXAMPLE APP AND IS TO BE USED WITH THE PARSE SERVER COURSE ON CODECRAFT.TV*
+
 ### For Local Development
 
 * Make sure you have at least Node 4.3. `node --version`
