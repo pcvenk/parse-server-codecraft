@@ -19,25 +19,25 @@ var api = new ParseServer({
 	//	classNames: ["TestObject", "Place", "Team", "Player"] // List of classes to support for query subscriptions
 	//},
 	// Enable email verification
-	//verifyUserEmails: true,
+	verifyUserEmails: true,
 	// The public URL of your app.
 	// This will appear in the link that is used to verify email addresses and reset passwords.
 	// Set the mount path as it is in serverURL
-	//publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
+	publicServerURL: process.env.SERVER_URL || 'http://localhost:1337/parse',
 	// Your apps name. This will appear in the subject and body of the emails that are sent.
-	//appName: process.env.APP_NAME || "CodeCraft",
+	appName: process.env.APP_NAME || "CodeCraft",
 	// The email adapter
-	//emailAdapter: {
-	//	module: 'parse-server-simple-mailgun-adapter',
-	//	options: {
-	//		// The address that your emails come from
-	//		fromAddress: process.env.EMAIL_FROM || "test@example.com",
-	//		// Your domain from mailgun.com
-	//		domain: process.env.MAILGUN_DOMAIN || "example.com",
-	//		// Your API key from mailgun.com
-	//		apiKey: process.env.MAILGUN_API_KEY  || "apikey"
-	//	}
-	//},
+	emailAdapter: {
+		module: 'parse-server-simple-mailgun-adapter',
+		options: {
+			// The address that your emails come from
+			fromAddress: process.env.EMAIL_FROM || "test@example.com",
+			// Your domain from mailgun.com
+			domain: process.env.MAILGUN_DOMAIN || "example.com",
+			// Your API key from mailgun.com
+			apiKey: process.env.MAILGUN_API_KEY  || "apikey"
+		}
+	},
 	//filesAdapter: new S3Adapter(
 	//	{
 	//		directAccess: true
