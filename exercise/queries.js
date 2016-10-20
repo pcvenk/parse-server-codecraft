@@ -1,5 +1,5 @@
 var Player = Parse.Object.extend('Player');
-// var Team = Parse.Object.extend('Team');
+var Team = Parse.Object.extend('Team');
 
 var q = new Parse.Query('Player');
 q.limit(1000);
@@ -52,12 +52,36 @@ q1.lessThan('jerseyNumber', 10);
 var q2 = new Parse.Query('Player');
 q2.greaterThan('jerseyNumber', 50);
 
+var queriedPlayers = [];
 
 var compoudQuery = Parse.Query.or(q1, q2);
 compoudQuery.find()
     .then(function(players){
         console.log('Players whose number is less than 10 or more than 50 are:');
         for(var i = 0; i < players.length; i++){
-            console.log(players[i].get('name'));
+            console.log(players[i].get('name') + ' ('+ players[i].get('jerseyNumber')+ ')');
+            queriedPlayers.push(players);
         }
     });
+
+console.log(queriedPlayers);
+
+
+var teamQ = new Parse.Query('Team');
+teamQ.startsWith('name', 'Man');
+teamQ.find()
+    .then(function(teams){
+       console.log(teams.length);
+    });
+
+var playerQ = new Parse.Query('Player');
+playerQ.equalTo('position', 'Keeper');
+playerQ.matchesQuery('team', teamQ);
+playerQ.limit(1000);
+playerQ.find()
+    .then(function(players){
+        for(var i = 0; i < players.length; i++){
+            console.log(players[i].get('name') + ' (' + players[i].get('teamCode') + '), ' + players[i].get('position'));
+        }
+    });
+
