@@ -1,4 +1,4 @@
-var Player = Parse.Object.extend('Player');
+/*var Player = Parse.Object.extend('Player');
 var Team = Parse.Object.extend('Team');
 
 var q = new Parse.Query('Player');
@@ -83,5 +83,5 @@ playerQ.find()
         for(var i = 0; i < players.length; i++){
             console.log(players[i].get('name') + ' (' + players[i].get('teamCode') + '), ' + players[i].get('position'));
         }
-    });
+    });*/
 

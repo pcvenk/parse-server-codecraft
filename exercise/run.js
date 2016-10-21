@@ -1,5 +1,5 @@
 
-
+//
 Parse.initialize("fo234155135dgwefb");
 Parse.serverURL = "https://parse-server-exmpl.herokuapp.com/parse";
 
@@ -136,26 +136,26 @@ for(var i = 0; i < items.length; i++) {
 }*/
 
 
-function onComplete(){
-
-    var promise = new Parse.Promise();
-
-    setTimeout(function(){
-
-        console.log('Timeout set');
-        promise.resolve('Promise resolved');
-
-    }, 2000);
-
-    return promise;
-};
-
-onComplete()
-    .then(function success(message){
-
-        console.log(message);
-        console.log('Now its time to go to work');
-
-    });
-
+// function onComplete(){
+//
+//     var promise = new Parse.Promise();
+//
+//     setTimeout(function(){
+//
+//         console.log('Timeout set');
+//         promise.resolve('Promise resolved');
+//
+//     }, 2000);
+//
+//     return promise;
+// };
+//
+// onComplete()
+//     .then(function success(message){
+//
+//         console.log(message);
+//         console.log('Now its time to go to work');
+//
+//     });
+//
 
