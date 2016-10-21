@@ -7,11 +7,11 @@ Parse.serverURL = "https://parse-server-exmpl.herokuapp.com/parse";
 var user = new Parse.User();
 
 //setting up the required attributes
-user.set('username', 'Cecko');
+user.set('username', 'Primoz');
 user.set('password', 'mypassword');
 
 //adding additional attributes
-user.set('email', 'primoz.cvenkelj@gmail.com');
+user.set('email', 'primoz.cvenkelj@weblio.si');
 user.set('name', 'Primoz');
 user.set('gender', 'male');
 
@@ -22,7 +22,7 @@ user.set('gender', 'male');
 //     });
 
 //UserLogin
-Parse.User.logIn('Cecko', 'mypassword')
+Parse.User.logIn('Primoz', 'mypassword')
     .then(function(user){
        console.log(Parse.User.current());
        console.log(user.attributes);
