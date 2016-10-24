@@ -1,19 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>JS Bin</title>
     <script src="http://www.parsecdn.com/js/parse-latest.js"></script>
-
-
-    <script src="run.js"></script>
-    <script src="queries.js"></script>
-    <script src="user.js"></script>
 </head>
 <body>
+<div class="container">
+    <form class="form-horizontal" id="signup-form">
+        <fieldset>
+            <div id="legend">
+                <legend class="">Sign Up</legend>
+            </div>
+            <div class="control-group">
+                <!-- E-mail -->
+                <label class="control-label" for="email">E-mail</label>
+                <div class="controls">
+                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                    <p class="help-block">Please provide your E-mail</p>
+                </div>
+            </div>
 
+            <div class="control-group">
+                <!-- Password-->
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                    <p class="help-block">Password should be at least 4 characters</p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <button class="btn btn-success">Sign Up</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <br><br><br>
+    <form class="form-horizontal" id="login-form">
+        <fieldset>
+            <div id="legend">
+                <legend class="">Login</legend>
+            </div>
+            <div class="control-group">
+                <!-- E-mail -->
+                <label class="control-label" for="email">E-mail</label>
+                <div class="controls">
+                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                    <p class="help-block">Please provide your E-mail</p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Password-->
+                <label class="control-label" for="password">Password</label>
+                <div class="controls">
+                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                    <p class="help-block">Password should be at least 4 characters</p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <button class="btn btn-info">Login</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <br><br><br>
+    <form class="form-horizontal">
+        <fieldset>
+            <div id="legend">
+                <legend class="">Logout</legend>
+            </div>
+
+            <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <button id="logout-btn" class="btn btn-error">Logout</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
+
+</div>
 </body>
 </html>
