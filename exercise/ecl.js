@@ -14,6 +14,8 @@ function main(){
   //  giving a specific user read and/or write access
   groupACL.setWriteAccess(user, true);
   groupACL.setReadAccess(user, false);
+  //  giving the public read-only access
+  groupACL.setPublicReadAccess(true);
 
   var testObject = new TestObject();
   testObject.setACL(groupACL);
