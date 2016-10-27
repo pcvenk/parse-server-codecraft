@@ -13,6 +13,7 @@
     <script src="run.js"></script>
     <script src="user.js"></script>
     <script src="ecl-roles.js"></script>
+    <script src="file-upload.js"></script>
 </head>
 <body>
 <div class="container">
@@ -25,7 +26,7 @@
                 <!-- E-mail -->
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                    <input type="text" id="email">
                     <p class="help-block">Please provide your E-mail</p>
                 </div>
             </div>
@@ -34,7 +35,7 @@
                 <!-- Password-->
                 <label class="control-label" for="password">Password</label>
                 <div class="controls">
-                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                    <input type="password" id="password">
                     <p class="help-block">Password should be at least 4 characters</p>
                 </div>
             </div>
@@ -58,7 +59,7 @@
                 <!-- E-mail -->
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                    <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
+                    <input type="text" id="email" placeholder="">
                     <p class="help-block">Please provide your E-mail</p>
                 </div>
             </div>
@@ -67,7 +68,7 @@
                 <!-- Password-->
                 <label class="control-label" for="password">Password</label>
                 <div class="controls">
-                    <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
+                    <input type="password" id="password" placeholder="">
                     <p class="help-block">Password should be at least 4 characters</p>
                 </div>
             </div>
@@ -80,6 +81,33 @@
             </div>
         </fieldset>
     </form>
+
+    <br><br><br>
+    <form class="form-horizontal">
+        <div id="legend">
+            <legend>File Upload</legend>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="file">File</label>
+            <div class="controls">
+                <input type="file" id="file" placeholder="Choose a file">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <br>
+            <label class="control-label">Button</label>
+            <br>
+            <div class="controls">
+                <div id="upload" class="btn btn-success btn-md">Load</div>
+            </div>
+        </div>
+        <br><br>
+        <p class="lead">Uploaded file url: <a href="" id="link">...</a></p>
+
+    </form>
+
 
     <br><br><br>
     <form class="form-horizontal">
