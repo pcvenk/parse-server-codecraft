@@ -46,7 +46,7 @@ var q = new Parse.Query('Place');
 q.withinGeoBox('geo', southwest, northeast);
 q.find().then(function(places){
 
-    for (var j=0; j<places.length; i++){
+    for (var j=0; j<places.length; j++){
         var place = places[j];
         var distance = place.get('geo').kilometersTo(myLocation);
         console.log(place.get('name') + ", " + "distance " + distance + " km");
