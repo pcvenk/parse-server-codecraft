@@ -7,11 +7,18 @@ var Place = Parse.Object.extend('Place');
 var myLocation = new Parse.GeoPoint({latitude: 51.54444, longitude: -0.022974});
 
 var q = new Parse.Query('Place');
+//adding a query parameter to search only coffeshops near my location and limiting the result
+//to 25 hits
+q.near('geo', myLocation);
+q.limit(25);
 q.find().then(function(coffeeshops){
 
     for(var i=0; i<coffeeshops.length; i++){
+        var coffeeshop = coffeeshops[i];
+        //printing put the distance in kilometers to coffeeshops
+        var distance = coffeeshop.get('geo').kilometersTo(myLocation);
         //find all the places around me, and display their name
-        console.log(coffeeshops[i].get('name'));
+        console.log(coffeeshop.get('name')+ "," + " distance " + distance + " kilometers");
     }
 
 });
