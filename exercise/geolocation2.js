@@ -111,6 +111,7 @@ var PizzaPlace = Parse.Object.extend("PizzaPlace");
 
 for (var i = 0; i < PIZZA_PLACES.length; i++) {
     var data = PIZZA_PLACES[i];
+    //creating a new instance of the pizzaplace object
     var place = new PizzaPlace();
     place.set("name", data.name);
     place.set("location", new Parse.GeoPoint({latitude: data.lat, longitude: data.lon}));
