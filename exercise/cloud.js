@@ -10,6 +10,7 @@ Parse.Cloud.run('hello')
 
 var TestObject = Parse.Object.extend('TestObject');
 var testObject = new TestObject();
+testObject.set('foo', 'Value defined');
 testObject.save()
     .then(function(){
        console.log('Saved');
