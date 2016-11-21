@@ -3,13 +3,13 @@ Parse.Cloud.define("resetPlayerNotes", function(request, response) {
 	Parse.Cloud.useMasterKey();
 	var q = new Parse.Query("Player");
 	q.each(function (player) {
-		// Update to plan value passed in
+		// Update to plain value passed in
 		player.set("notes", "");
 		return player.save();
 	}).then(function () {
 		// Set the job's success status
-		response.success("Player reset completed successfully.");
-	}, function (error) {
+		response.success("Player notes reset completed successfully.");
+	}, function () {
 		// Set the job's error status
 		response.error("Uh oh, something went wrong.");
 	});
